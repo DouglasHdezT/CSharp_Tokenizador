@@ -25,6 +25,7 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
     - [Token de fin de bloque: *<t_block_end>*](#token-de-fin-de-bloque-t_block_end)
     - [Token de inicio de expresión: *<t_exp_start>*](#token-de-inicio-de-expresión-t_exp_start)
     - [Token de fin de expresión: *<t_exp_end>*](#token-de-fin-de-expresión-t_exp_end)
+    - [Token fallback: *<t_missingno>*](#token-fallback-t_missingno)
 
 ## Desarrolladores
 
@@ -81,7 +82,7 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - Decimales
 
 ### Token de constantes cadenas: *<t_string>*
-> **Regex:** /^"(\\"|[^"])*"$/ 
+> **Regex:** /"(.*?)"/
 
 - " "
 
@@ -168,4 +169,5 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 
 - )
 
-
+### Token fallback: *<t_missingno>*
+> **Regex:** //

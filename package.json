@@ -1,0 +1,20 @@
+{
+  "name": "tokenizador",
+  "version": "1.0.0",
+  "description": "Para el software se ha utilizado JavaScript como lenguaje de pregramación, y todo el sistema ha sido desarrollado sobre un sitio web estático.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "node-sass -w -o css sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DouglasHdezT/CSharp_Tokenizador.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DouglasHdezT/CSharp_Tokenizador/issues"
+  },
+  "homepage": "https://github.com/DouglasHdezT/CSharp_Tokenizador#readme"
+}

@@ -1,0 +1,110 @@
+main {
+    width: 100%;
+    margin: 32px 0;
+    padding: 0 10%;
+
+    height: 70vh;
+
+    display: flex;
+
+    section{
+        flex: 1 0;
+        margin: 0 32px;
+    }
+
+    h3{
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+
+        margin: 16px 0;
+        padding: 0 0 8px;
+
+        border-bottom: 1px solid #999;
+    }
+
+    section#input-section{
+        display: flex;
+        flex-direction: column;
+
+        div.input-area{
+            width: 100%;
+            height: 100%;
+            
+            display: flex;
+            flex-direction: column;
+        }
+
+        textarea{
+            height: 100%;
+            padding: 24px 32px;
+            resize: none;
+
+            font-family: "Fira Mono", monospace;
+            font-size: 1.2rem;
+
+            border-radius: 1rem 1rem 0 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        button{
+            padding: 0.7rem;
+            border: 2px palevioletred solid;
+
+            background-color: palevioletred;
+
+            color: white;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.2rem;
+
+            border-radius: 0 0 1rem 1rem;
+
+            cursor: pointer;
+            transition: ease-in-out all 250ms;
+
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+            &:hover{
+                background-color: crimson;
+                color: white;
+            }
+
+            &:active{
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    section#result-section{
+        display: flex;
+        flex-direction: column;
+
+        
+        div.result-area{
+            width: 100%;
+            height: 100%;
+            
+            padding: 32px;
+
+            background-color: white;
+            
+            display: flex;
+            flex-wrap: wrap;
+
+            overflow: auto;
+            
+            justify-content: space-between;
+            align-content: flex-start;
+
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        span{
+            padding: 8px;
+
+            font-family: "Roboto", sans-serif;
+            font-size: 1rem;
+        }
+    }
+}

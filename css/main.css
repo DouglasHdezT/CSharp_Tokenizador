@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0; }
+
+body {
+  background: #333; }
+
+.container {
+  background-color: #eee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 2rem 0; }
+
+header {
+  width: 100%;
+  padding: 0 3rem 2rem;
+  font-family: "Montserrat", sans-serif; }
+  header h1 {
+    text-align: center;
+    font-size: 2.3rem; }
+  header h2 {
+    text-align: center;
+    font-size: 1.3rem; }
+
+main {
+  width: 100%;
+  margin: 32px 0;
+  padding: 0 10%;
+  height: 70vh;
+  display: flex; }
+  main section {
+    flex: 1 0;
+    margin: 0 32px; }
+  main h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 16px 0;
+    padding: 0 0 8px;
+    border-bottom: 1px solid #999; }
+  main section#input-section {
+    display: flex;
+    flex-direction: column; }
+    main section#input-section div.input-area {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column; }
+    main section#input-section textarea {
+      height: 100%;
+      padding: 24px 32px;
+      resize: none;
+      font-family: "Fira Mono", monospace;
+      font-size: 1.2rem;
+      border-radius: 1rem 1rem 0 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    main section#input-section button {
+      padding: 0.7rem;
+      border: 2px palevioletred solid;
+      background-color: palevioletred;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      border-radius: 0 0 1rem 1rem;
+      cursor: pointer;
+      transition: ease-in-out all 250ms;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+      main section#input-section button:hover {
+        background-color: crimson;
+        color: white; }
+      main section#input-section button:active {
+        font-size: 0.9rem; }
+  main section#result-section {
+    display: flex;
+    flex-direction: column; }
+    main section#result-section div.result-area {
+      width: 100%;
+      height: 100%;
+      padding: 32px;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: auto;
+      justify-content: space-between;
+      align-content: flex-start;
+      border-radius: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    main section#result-section span {
+      padding: 8px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem; }
+
+footer {
+  width: 100%;
+  padding: 16px 15%;
+  display: flex;
+  color: white;
+  font-family: "Montserrat", sans-serif; }
+  footer div.info {
+    flex: 1 0;
+    margin: 0 32px; }
+    footer div.info h3 {
+      margin-bottom: 16px; }
+    footer div.info ul {
+      list-style: none; }
+    footer div.info a {
+      display: inline-block;
+      font-family: "Roboto", sans-serif;
+      color: white;
+      margin: 4px 0; }
+      footer div.info a:hover {
+        text-decoration: none; }
