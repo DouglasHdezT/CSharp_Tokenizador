@@ -26,6 +26,8 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
     - [Token de inicio de expresión: *<t_exp_start>*](#token-de-inicio-de-expresión-t_exp_start)
     - [Token de fin de expresión: *<t_exp_end>*](#token-de-fin-de-expresión-t_exp_end)
     - [Token fallback: *<t_missingno>*](#token-fallback-t_missingno)
+    - [Comentarios (one line):](#comentarios-one-line)
+    - [Comentarios (multi line):](#comentarios-multi-line)
 
 ## Desarrolladores
 
@@ -37,20 +39,20 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 ## Listado de tokens aceptado por el Analizador Lexicográfico.
 
 ### Token de tipo de dato primitivo: *<t_dataype>*
-> **Regex:** /^(int|char|bool)$/
+> **Regex:** /(int|char|bool)/
 
 - int
 - char
 - bool
 
 ### Token de Modificador de acceso: *<t_access_mod>*
-> **Regex:** /^(public|private)$/
+> **Regex:** /(public|private)/
 
 - public
 - private
 
 ### Token de bloques de instrucción o sentencia: *<t_statement>*
-> **Regex:** /^(if|else|do|while)$/
+> **Regex:** /(if|else|do|while)/
 
 - if
 - else
@@ -59,10 +61,10 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - for
 
 ### Token de identificador: *<t_identifier>*
-> **Regex:** /^[_a-zA-Z][a-zA-Z\d_]*$/
+> **Regex:** /[_a-zA-Z][a-zA-Z\d_]*/
 
 ### Token de identificador textual: *<t_textual_identifier>*
-> **Regex:** /^@(if|else|do|while|int|char|bool|public|private)$/
+> **Regex:** /@(if|else|do|while|int|char|bool|public|private)/
 
 - int
 - char
@@ -76,7 +78,7 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - for
 
 ### Token de constante numérica: *<t_number>*
-> **Regex:** /^(\d)+(.(\d)+)?$/
+> **Regex:** /(\d)+(.(\d)+)?/
 
 - Enteros
 - Decimales
@@ -87,12 +89,12 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - " "
 
 ### Token de constante caracter: *<t_character>*
-> **Regex:** /^'(\\'|[^']){1}'$/
+> **Regex:** /'(\\'|[^']){1}'/
 
 - ' '
 
 ### Token de operador aritmético: *<t_arithmetic_op>*
-> **Regex:** /^(\+|\-|\*|\/|\%|\+\+|\-\-)$/
+> **Regex:** /(\+|\-|\*|\/|\%|\+\+|\-\-)/
 
 - \+
 - \-
@@ -103,14 +105,14 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - \--
 
 ### Token de operador lógico: *<t_logic_op>*
-> **Regex:** /^(\|\||\&\&|\!)$/
+> **Regex:** /(\|\||\&\&|(!(?!=)))/
 
 - && 
 - || 
 - !
 
 ### Token de operador relacional: *<t_relation_op>*
-> **Regex:**: /^(==|!=|<|>|>=|<=)$/
+> **Regex:**: /(==|!=|<|>|>=|<=)/
 
 - == 
 - != 
@@ -120,7 +122,7 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - <=
 
 ### Token de operador de bits: *<t_bits_op>*
-> **Regex:** /^(>>|<<|\&|\||~|\^)$/
+> **Regex:** /(>>|<<|\&|\||~|\^)/
 
 - \>> 
 - << 
@@ -130,44 +132,50 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - ^
 
 ### Token de asignacion: *<t_assign>*
-> **Regex:** /^=$/
+> **Regex:** /=/
 
 - =
 
 ### Token de fin de instrucción: *<t_EOI>*
-> **Regex:** /^;$/
+> **Regex:** /;/
 
 - ;
 
 ### Token de separador: *<t_separator>*
-> **Regex:** /^,$/
+> **Regex:** /,/
 
 - ,
 
 ### Token de acceso: *<t_access>*
-> **Regex:** /^\.$/
+> **Regex:** /\./
 
 - .
 
 ### Token de inicio de bloque: *<t_block_start>*
-> **Regex:** /^\{$/
+> **Regex:** /\{/
 
 - {
 
 ### Token de fin de bloque: *<t_block_end>*
-> **Regex:** /^\}$/
+> **Regex:** /\}/
 
 - }
 
 ### Token de inicio de expresión: *<t_exp_start>*
-> **Regex:** /^\($/
+> **Regex:** /\(/
 
 - (
 
 ### Token de fin de expresión: *<t_exp_end>*
-> **Regex:** /^\)$/
+> **Regex:** /\)/
 
 - )
 
 ### Token fallback: *<t_missingno>*
-> **Regex:** //
+> **Regex:** /[^¡]+/
+
+### Comentarios (one line): 
+> **Regex:** /(\/\/(.*?)$)/gm
+
+### Comentarios (multi line): 
+> **Regex:** /\/\*((.(\n)* )*?)\*\//gm

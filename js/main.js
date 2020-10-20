@@ -24,6 +24,11 @@ const TOKENS = {
     t_missingno: /[^¡]+/
 }
 
+const COMMENT_REGEX = {
+    oneline: /(\/\/(.*?)$)/gm,
+    multiline: /\/\*((.(\n)*)*?)\*\//gm
+}
+
 const TOKENS_COLORS = {
     //Primero verificar cadenas.
     t_string: /"(.*?)"/,
@@ -117,8 +122,19 @@ const tokenize = (wordToTokenize="") => {
     return tokensFound.flat();
 }
 
+const cleanUpComments = (textToClean) => { 
+    let cleanText = textToClean;
+
+    Object.keys(COMMENT_REGEX).forEach(regex => {
+        cleanText = cleanText.replace(COMMENT_REGEX[regex], ""); 
+    });
+
+    return cleanText;
+}
+
 const tokenizeAll = (input = "") => {
-    const cleanInput = input.replace(/(\n)+/g, " ").replace(/(\t)+|(\s)+/g, " ").trim();
+    const inputWOComments = cleanUpComments(input);
+    const cleanInput = inputWOComments.replace(/(\n)+/g, " ").replace(/(\t)+|(\s)+/g, " ").trim();
     //console.log(cleanInput);
 
     /* const splitedWords = cleanInput.split(/\s+/);
@@ -151,7 +167,7 @@ const tokenizeAll = (input = "") => {
 //tokenize('a=2.2');
 //tokenize('Console.log("Hola mundo"+"Hola"+ComoNo.toString());');
 
-tokenizeAll(`
+/* tokenizeAll(`
     Console.Write("Hola mundo");
     
     int a = 2;
@@ -164,6 +180,23 @@ tokenizeAll(`
                                             " +c);
 `);
 
-tokenizeAll("int @int int")
+tokenizeAll("int @int int") */
+
+//console.log(cleanUpComments(`
+/* Multine comment to clean
+    Hola
+    Hola
+    Hola
+
+    Equis de
+
+
+*/
+
+//int?
+//int a = 4; //Comentario de fila
+
+/* otro comentarios */
+//Console.Write("Hola mundo")`));
 
 
