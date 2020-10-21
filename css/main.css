@@ -31,7 +31,7 @@ main {
   display: flex;
   flex-wrap: wrap; }
   main section {
-    flex: 1 0 45%;
+    flex: 1 0 40%;
     margin: 0 32px;
     max-height: 70vh; }
   main h3 {
