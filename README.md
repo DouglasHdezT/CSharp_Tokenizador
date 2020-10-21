@@ -39,20 +39,20 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 ## Listado de tokens aceptado por el Analizador Lexicográfico.
 
 ### Token de tipo de dato primitivo: *<t_dataype>*
-> **Regex:** /(int|char|bool)/
+> **Regex:** /(?<![a-zA-Z\d._])(int|char|bool)(?![a-zA-Z\d._])/
 
 - int
 - char
 - bool
 
 ### Token de Modificador de acceso: *<t_access_mod>*
-> **Regex:** /(public|private)/
+> **Regex:** /(?<![a-zA-Z\d._])(public|private)(?![a-zA-Z\d._])/
 
 - public
 - private
 
 ### Token de bloques de instrucción o sentencia: *<t_statement>*
-> **Regex:** /(if|else|do|while)/
+> **Regex:** /(?<![a-zA-Z\d._])(if|else|do|while)(?![a-zA-Z\d._])/
 
 - if
 - else
@@ -64,7 +64,7 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 > **Regex:** /[_a-zA-Z][a-zA-Z\d_]*/
 
 ### Token de identificador textual: *<t_textual_identifier>*
-> **Regex:** /@(if|else|do|while|int|char|bool|public|private)/
+> **Regex:** /(?<![a-zA-Z\d._])@(if|else|do|while|int|char|bool|public|private)(?![a-zA-Z\d._])/
 
 - int
 - char
@@ -94,15 +94,13 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 - ' '
 
 ### Token de operador aritmético: *<t_arithmetic_op>*
-> **Regex:** /(\+|\-|\*|\/|\%|\+\+|\-\-)/
+> **Regex:** /(\+|\-|\*|\/|\%)/
 
 - \+
 - \-
 - \*
 - /
 - %
-- ++
-- \--
 
 ### Token de operador lógico: *<t_logic_op>*
 > **Regex:** /(\|\||\&\&|(!(?!=)))/
@@ -178,4 +176,4 @@ Para el software se ha utilizado JavaScript como lenguaje de pregramación, y to
 > **Regex:** /(\/\/(.*?)$)/gm
 
 ### Comentarios (multi line): 
-> **Regex:** /\/\*((.(\n)* )*?)\*\//gm
+> **Regex:** /\/\*((.*(\n)* )*?)\*\//gm

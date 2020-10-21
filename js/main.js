@@ -2,10 +2,10 @@ const TOKENS = {
     //Primero verificar cadenas.
     t_string: /"(.*?)"/,
     t_character: /'(\\'|[^']){1}'/,
-    t_textual_identifier: /@(if|else|do|while|int|char|bool|public|private)/,
-    t_dataype: /(int|char|bool)/,
-    t_access_mod: /(public|private)/,
-    t_statement: /(if|else|do|while)/,
+    t_textual_identifier: /(?<![a-zA-Z\d._])@(if|else|do|while|int|char|bool|public|private)(?![a-zA-Z\d._])/,
+    t_dataype: /(?<![a-zA-Z\d._])(int|char|bool)(?![a-zA-Z\d._])/,
+    t_access_mod: /(?<![a-zA-Z\d._])(public|private)(?![a-zA-Z\d._])/,
+    t_statement: /(?<![a-zA-Z\d._])(if|else|do|while)(?![a-zA-Z\d._])/,
     t_identifier: /[_a-zA-Z][a-zA-Z\d_]*/,
     t_number: /(\d)+(.(\d)+)?/,
     t_arithmetic_op: /(\+|\-|\*|\/|\%|\+\+|\-\-)/,
@@ -26,33 +26,33 @@ const TOKENS = {
 
 const COMMENT_REGEX = {
     oneline: /(\/\/(.*?)$)/gm,
-    multiline: /\/\*((.(\n)*)*?)\*\//gm
+    multiline: /\/\*((.*(\n)*)*?)\*\//gm
 }
 
 const TOKENS_COLORS = {
     //Primero verificar cadenas.
-    t_string: /"(.*?)"/,
-    t_character: /'(\\'|[^']){1}'/,
-    t_textual_identifier: /@(if|else|do|while|int|char|bool|public|private)/,
-    t_dataype: /(int|char|bool)/,
-    t_access_mod: /(public|private)/,
-    t_statement: /(if|else|do|while)/,
-    t_identifier: /[_a-zA-Z][a-zA-Z\d_]*/,
-    t_number: /(\d)+(.(\d)+)?/,
-    t_arithmetic_op: /(\+|\-|\*|\/|\%|\+\+|\-\-)/,
-    t_logic_op: /(\|\||\&\&|(!(?!=)))/,
-    t_bits_op: /(>>|<<|\&|\||~|\^)/,
-    t_relation_op: /(==|!=|>=|<=|<|>)/,
-    t_assign: /=/,
-    t_EOI: /;/,
-    t_separator: /,/,
-    t_access: /\./,
-    t_block_start: /\{/,
-    t_block_end: /\}/,
-    t_exp_start: /\(/,
-    t_exp_end: /\)/,
-    t_whitespace: /\s+/,
-    t_missingno: /[^¡]+/
+    t_string: "#4CAF50",
+    t_character: "#4CAF50",
+    t_textual_identifier: "#3F51B5",
+    t_dataype: "#FF5722",
+    t_access_mod: "#FF5722",
+    t_statement: "#FF5722",
+    t_identifier: "#3F51B5",
+    t_number: "#4CAF50",
+    t_arithmetic_op: "#9C27B0",
+    t_logic_op: "#9C27B0",
+    t_bits_op: "#9C27B0",
+    t_relation_op: "#9C27B0",
+    t_assign: "#E91E63",
+    t_EOI: "#E91E63",
+    t_separator: "#E91E63",
+    t_access: "#E91E63",
+    t_block_start: "#931a25",
+    t_block_end: "#931a25",
+    t_exp_start: "#931a25",
+    t_exp_end: "#931a25",
+    t_whitespace: "#9E9E9E",
+    t_missingno: "#F44336"
 }
 
 
@@ -69,6 +69,8 @@ window.onload = () => {
  
 const createTokenSpan = (token) => { 
     const span = document.createElement("span");
+    span.style.backgroundColor = TOKENS_COLORS[token]
+
     span.innerText = `<${token}>`
 
     return span;
