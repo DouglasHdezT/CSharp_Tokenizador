@@ -3,13 +3,16 @@ footer {
     padding: 16px 15%;
 
     display: flex;
+    flex-wrap: wrap;
 
     color: white;
     font-family: "Montserrat", sans-serif;
 
     div.info{
-        flex: 1 0;
+        flex: 1 0 30%;
         margin: 0 32px;
+
+        margin-top: 32px;
 
         h3{
             margin-bottom: 16px;

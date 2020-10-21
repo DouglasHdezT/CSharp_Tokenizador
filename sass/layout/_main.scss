@@ -3,13 +3,16 @@ main {
     margin: 32px 0;
     padding: 0 10%;
 
-    height: 70vh;
+    min-height: 70vh;
 
     display: flex;
+    flex-wrap: wrap;
 
     section{
-        flex: 1 0;
+        flex: 1 0 45%;
         margin: 0 32px;
+
+        max-height: 70vh;
     }
 
     h3{
@@ -36,6 +39,7 @@ main {
         }
 
         textarea{
+            min-height: 50vh;
             height: 100%;
             padding: 24px 32px;
             resize: none;

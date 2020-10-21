@@ -6,6 +6,8 @@ body {
   background: #333; }
 
 .container {
+  width: 100%;
+  min-width: 600px;
   background-color: #eee;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 2rem 0; }
@@ -25,11 +27,13 @@ main {
   width: 100%;
   margin: 32px 0;
   padding: 0 10%;
-  height: 70vh;
-  display: flex; }
+  min-height: 70vh;
+  display: flex;
+  flex-wrap: wrap; }
   main section {
-    flex: 1 0;
-    margin: 0 32px; }
+    flex: 1 0 45%;
+    margin: 0 32px;
+    max-height: 70vh; }
   main h3 {
     font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
@@ -46,6 +50,7 @@ main {
       display: flex;
       flex-direction: column; }
     main section#input-section textarea {
+      min-height: 50vh;
       height: 100%;
       padding: 24px 32px;
       resize: none;
@@ -98,11 +103,13 @@ footer {
   width: 100%;
   padding: 16px 15%;
   display: flex;
+  flex-wrap: wrap;
   color: white;
   font-family: "Montserrat", sans-serif; }
   footer div.info {
-    flex: 1 0;
-    margin: 0 32px; }
+    flex: 1 0 30%;
+    margin: 0 32px;
+    margin-top: 32px; }
     footer div.info h3 {
       margin-bottom: 16px; }
     footer div.info ul {
